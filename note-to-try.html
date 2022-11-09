@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart</title>
+    <style>
+      :root {
+        --border-style: 2px solid pink;
+        --border-style1: 1px solid pink;
+        --border-none: 2px solid pink;
+        --background-color: #fff;
+      }
+
+      .heart {
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        transform: rotate(-45deg);
+
+        border-bottom: var(--border-none);
+        border-left: var(--border-none);
+        /* background-image: linear-gradient(to right, #000, #f00); */
+      }
+
+      .heart::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+        /* .... */
+        border-radius: 50%;
+        border-top: var(--border-none);
+        border-left: var(--border-none);
+        border-right: none;
+        border-bottom: none;
+        transform: rotate(67.5deg);
+        /* background-image: linear-gradient(to right, #000, #f00); */
+      }
+      .heart::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        /* .... */
+        border-radius: 50%;
+        border-top: var(--border-none);
+        border-right: var(--border-none);
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(45deg);
+        /* background-image: linear-gradient(#000, #f00); */
+      }
+
+      .heart,
+      .heart::after,
+      .heart::before {
+        height: 100px;
+        width: 100px;
+        background-color: var(--background-color);
+      }
+
+      @keyframes scalation {
+        0% {
+          transform: scale(0.8) rotate(-45deg);
+        }
+
+        100% {
+          transform: scale(1.5) rotate(-45deg);
+        }
+      }
+      /* .heart {
+        animation: 0.5s ease-in-out infinite alternate both scalation;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="heart"></div>
+  </body>
+</html>
